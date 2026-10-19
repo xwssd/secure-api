@@ -1,0 +1,41 @@
+stages:
+  - test
+  - sast
+  - sca
+
+default:
+  image: python:3.12-slim
+  before_script:
+    - python -m pip install --upgrade pip
+    - pip install -r requirements-dev.txt
+  cache:
+    key:
+      files:
+        - requirements-dev.txt
+    paths:
+      - .cache/pip
+
+unit-tests:
+  stage: test
+  script:
+    - pytest -q
+  artifacts:
+    when: always
+    reports:
+      junit: report.xml
+
+bandit-sast:
+  stage: sast
+  script:
+    - bandit -r app -ll -f txt -o bandit-report.txt
+    - cat bandit-report.txt
+  artifacts:
+    when: always
+    paths:
+      - bandit-report.txt
+
+pip-audit-sca:
+  stage: sca
+  script:
+    - pip-audit -r requirements.txt
+  allow_failure: false

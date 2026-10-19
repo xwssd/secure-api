@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+instance/
+*.sqlite
+*.sqlite3
+.pytest_cache/
+.coverage
+bandit-report.txt
+pip-audit-report.json
+report.xml
+.env
+.idea/
+.vscode/
+
+# pip / pip-audit scratch directories created when TMPDIR points at the repo
+pip-metadata-*/
+pip-unpack-*/
+tmp*/
