@@ -18,3 +18,7 @@ report.xml
 pip-metadata-*/
 pip-unpack-*/
 tmp*/
+
+pip-*/
+tmp*/
+pytest-of-*/
