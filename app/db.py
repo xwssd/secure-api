@@ -1,9 +1,4 @@
-"""SQLite access helpers.
-
-Every query in the application goes through a ``?`` placeholder python-side.
-No SQL string is ever built by concatenating user input, which is the
-mitigation for A03:2021-Injection required by the assignment.
-"""
+"""SQLite access helpers."""
 
 import sqlite3
 

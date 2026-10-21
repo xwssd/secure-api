@@ -1,9 +1,4 @@
-"""Application factory for the secure demo API.
-
-The project is intentionally small so that every security control from the
-assignment (parameterised SQL, output escaping, JWT authentication, hashed
-passwords, security headers) can be pointed at in review.
-"""
+"""Application factory."""
 
 import os
 
